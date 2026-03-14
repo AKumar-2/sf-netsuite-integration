@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Integration Error Dashboard" icon-name="standard:dashboard">
+        <div class="slds-m-around_medium">
+            <template if:true={logs}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={logs}
+                    columns={columns}
+                    hide-checkbox-column="true"
+                    onrowaction={handleRowAction}>
+                </lightning-datatable>
+            </template>
+            <template if:true={error}>
+                <p class="slds-text-color_error">{error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
